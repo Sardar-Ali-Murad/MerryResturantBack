@@ -20,6 +20,7 @@ import mongoSanitize from 'express-mongo-sanitize';
 // db and authenticateUser
 import connectDB from './db/connect.js';
 import contactRouter from "./routes/ContactRoute.js"
+import bookRouter from "./routes/bookRoutes.js"
 
 // routers
 // middleware
@@ -48,11 +49,12 @@ app.use(fileUpload({ useTempFiles: true }));
 
 app.use(cors({
   credentials: true,  
-  origin: ["http://127.0.0.1:5173","https://res.cloudinary.com","https://social-media-flax.vercel.app"]
+  origin: ["http://127.0.0.1:5173","https://res.cloudinary.com","https://hotel-app-merry.vercel.app/"]
 
 }))
 
 app.use('/api/v1/contact', contactRouter);
+app.use('/api/v1/book', bookRouter);
 
 app.use(notFoundMiddleware);
 app.use(errorHandlerMiddleware);
