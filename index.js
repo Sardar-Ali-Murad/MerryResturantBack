@@ -48,7 +48,7 @@ app.use(fileUpload({ useTempFiles: true }));
 
 
 app.use(cors({
-  credentials: true,  
+  // credentials: true,  
   origin: ["http://127.0.0.1:5173","https://res.cloudinary.com","https://hotel-app-merry.vercel.app/"]
 
 }))
